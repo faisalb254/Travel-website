@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        html{
+            /* width: 100%; */
+            scroll-behavior: smooth;
+            /* height: 100vh; */
+        }
+        body{
+            margin: 0px;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: lighter;
+            color: #ffa500;
+            text-align: center;
+        }
+        h2{
+            color: #ffa500;
+            font-weight: lighter;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            color: #ffa500;
+        }
+        /* .container{
+            position: relative;
+            top: -8px;
+            left: -10px;
+            width: 99vw;
+            
+        } */
+        #home{
+            /* width: 99vw; */
+            background-color: rgb(232 232 232);;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* position: absolute; */
+            /* top: 0px;
+            left: 0px; */
+        }
+        .nav{
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        .nav img{
+            max-height: 180px;
+            width: auto;
+            margin-left: 9%;
+        }
+        .nav ul li{
+            display: inline-block;
+            list-style-type: none;
+            margin-left: 20px;
+         }
+         .nav ul li a{
+            text-decoration: none;
+            color: #134368;
+            transition-property: all;
+            transition-duration: 500ms;
+         }
+         .nav ul li a:hover{
+            text-decoration: underline;
+            font-weight: bold;
+            color: #ffa500;
+            letter-spacing: 5px;
+            cursor: pointer;
+         }
+         .letters{
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+        .letters h1{
+            display: inline-block;
+            font-size: 40px;
+            color: #134368;
+            animation: travel 4s ease-in-out infinite ;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 1px solid black;
+        }
+        @keyframes travel {
+            0%{
+                width: 0ch;
+            }
+            50%{
+                width: 19ch;
+            }
+            100%{
+                width: 0ch;
+            }
+        }
+        .letters p{
+            margin: 10px;
+            display: inline-block;
+            font-size: 30px;
+            color: #ffa500;
+            border-bottom: 1px solid;
+            font-style: italic;
+        }
+        .travelfig img{
+            height: 400px;
+            width: 90vw;
+        }
+
+        .navmobi{
+            display: none;
+            width: 100%;
+        }
+        .navmobi i{
+            float: left;
+            color: black;
+            font-size: 25px;
+        }
+        .navmobi button{
+            background-color: none;
+            border: none;
+            cursor: pointer;
+            font-size: 10px;
+        }
+        .navmobi #navlist{
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+        #navlist ul{
+         list-style-type: none;   
+         padding: 0px;
+         width: 99vw;
+        }
+        #navlist li{
+            border: 1px solid;
+            padding: 25px;
+            color: white;
+            background-color: #134368;
+        }
+        #navlist li a{
+            color: white;
+            text-decoration: none;
+        }
+        .navmobi .logo{
+            display: flex;
+            justify-content: center;
+        }
+        .navmobi .logo img{
+            max-height: 180px;
+            width: auto;
+        }
+        #about{
+            background-color: rgb(232 232 232);
+            /* width: 99vw; */
+            color: #ffa500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            /* position: absolute; */
+        }
+        /* #about h1{
+            font-weight: lighter;
+
+        } */
+        #about .box{
+            display: grid;
+            grid-template-columns: 500px 350px;
+        }
+        .box .left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box .left div{
+            display: inline-block;
+            font-size: 35px;
+        }
+        .box .left p{
+            border-top: 1px solid;
+            padding-top: 15px;
+            margin-right: 45px;
+            color: #134368;
+            font-size: 15px;
+            text-align: justify;
+            line-height: 30px;
+        }
+        .box .right img{
+            width: 100%;
+            height: 75%;
+            margin-left: 32px;
+            margin-top: 50px;
+        }
+
+        #package{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 60px;
+        }
+        #package h1{
+            /* font-weight: lighter;
+            color: #ffa500; */
+            margin-bottom: 60px;
+        }
+        #package .travelbox{
+            width: 72%;
+            display: grid;
+            grid-template-columns: 500px 500px;
+        }
+        #package button{
+            margin: 10px;
+            padding: 10px 20px 10px 20px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .travelbox .tabs{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .travelbox text{
+            width: 100%;
+        }
+        #but1{
+            background-color: #ffa500;
+        }
+        #but2{
+            background-color: #5d5d5d;
+        }
+        #but3{
+            background-color: #5d5d5d;
+        }
+        #t1{
+            width: 100%;
+            display: block;
+            text-align: justify;
+        }
+        #t2{
+            display: none;
+            text-align: justify;
+        }
+        #t3{
+            display: none;
+            text-align: justify;
+        }
+        .travelbox .text{
+            width: 100%;
+            margin-top: 8%;
+            padding-right: 10%;
+            font-size: 18px;
+            color: #134368;
+        }
+
+        .travelbox ul{
+            padding-left: 15px;
+        }
+        .travelbox li{
+            color: grey;
+            margin-top: 20px;
+            list-style-type: none;
+        }
+        .travelbox li i{
+            color: #ffa500;
+        }
+        #service{
+            display: flex;
+            /* width: 99vw; */
+            flex-flow: column wrap;
+            /* justify-content: center; */
+            align-items: center;
+            background-color: rgb(232 232 232);
+            color: #ffa500;
+            padding: 40px;
+        }
+        /* #service h1{
+            font-weight: lighter;
+        } */
+        #service .servicebox{
+            width: 60%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+        .servicebox .box{
+            height: 200px;
+            width: 250px;
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .box p{
+            text-align: center;
+            font-size: 25px;
+            color: #134368;
+        }
+        #gallery{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        /* #gallery h1{
+            color: #ffa500;
+            font-weight: lighter;
+        } */
+        #gallery .imagegallery{
+            width: 70%;
+            /* min-width: 1000px; */
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        #gallery img{
+            border: 1px solid;
+            border-collapse: collapse;
+            height: 200px;
+            width: 200px;
+            padding: 5px;
+            margin: 1%;
+        }
+        #awards{
+            display: flex;
+            color: #ffa500;
+            background-color: rgb(232 232 232);
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        /* #awards h1{
+            font-weight: lighter;
+            font-size: 40px;
+        } */
+        .awardgallery{
+            width: 60%;
+            min-height: 600px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .awardgallery img{
+            width: 25%;
+            max-height: 400px;
+            height: auto;
+        }
+        #message{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        }
+        /* #message h1{
+            font-weight: lighter;
+            color: #ffa500;
+        } */
+        /* .messagebox{
+            display: flex;
+            width: 60%;
+            height: 500px;
+            align-items: center;
+            flex-wrap: wrap;
+        } */
+        .messagebox{
+            width: 60%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        .messagebox .left{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* height: 270px; */
+        }
+        .messagebox .right{
+            width: 100%;
+        }
+        .messagebox img{
+            width: 80%;
+            height: 80%;
+            border-radius: 100%;
+        }
+        .messagebox p{
+            display: flex;
+            flex-wrap: wrap;
+            color: #134368;
+            line-height: 30px;
+            text-align: justify;
+            font-size: 18px;
+            width: 100%;
+        }
+        #contacts{
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        #contacts .foot{
+            width: 75%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            /* align-items: center; */
+        }
+        .foot div{
+            width: 330px;
+        }
+        .foot div ul{
+            list-style-type: none;
+            padding: 0px;
+        }
+        .foot div ul i{
+            margin-right: 2px;
+        }
+        .foot div ul li{
+            padding-top: 20px;
+        }
+        #contacts img{
+            margin-top: 40px;
+            width: 450px;
+            height: auto;
+            padding-bottom: 40px;
+            border-bottom: 1px solid;
+        }
+        @media (max-width:1200px) {
+            #about .box{
+                grid-template-columns: 75%;
+                justify-content: center;
+            }
+            .box .right img{
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+            #package .travelbox{
+                grid-template-columns: 100%;
+            }
+            #package .travelbox .right{
+                display: none;
+            }
+            .nav{
+                display: none;
+            }
+            .navmobi{
+                display: block;
+            }
+            .messagebox{
+                grid-template-columns: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        @media (max-width:1300px) {
+            #package .travelbox .right{
+                display: none;
+            }  
+            .footnav{
+                display: none;
+            }
+        }
+        @media (max-width:500px) {
+            #contacts img{
+                width: 300px;
+            }
+            #contacts p{
+                text-align: center;
+            }
+            .box .left p{
+                margin-right: 0px;
+            }
+            .awardgallery{
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="home">
+            <div class="nav">
+                <img src="/img/logo.png" alt="">
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#service">SERVICES</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#awards">AWARDS</a></li>
+                    <li><a href="#contacts">CONTACTS</a></li>
+                </ul>
+            </div>
+            <div class="navmobi">
+                <button onclick="nav1()"><i class="fa-solid fa-bars"></i></button>
+                <div id="navlist">
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#service">SERVICES</a></li>
+                        <li><a href="#gallery">GALLERY</a></li>
+                        <li><a href="#awards">AWARDS</a></li>
+                        <li><a href="#contacts">CONTACTS</a></li>
+                    </ul>
+                </div>
+                <div class="logo"><img src="/img/logo.png" alt=""></div>
+            </div>
+            <div class="letters">
+                <h1>Never Stop Traveling!</h1>
+                <p>Once a year, Go some place you've never been before!!!</p>
+            </div>
+            <div class="travelfig">
+                <figure>
+                    <img src="/img/travel-border-1.png" alt="">
+                </figure>
+            </div>
+        </div>
+        <div id="about">
+            <h1>About us</h1>
+            <div class="box">
+                <div class="left">
+                    <div>
+                        Welcome
+                    </div>
+                    <p>
+                        In March 1985 Rizvi group established TSY, travel and tour operators.
+                        <br>
+                         TSY specialize in international and domestic travel and tour planing and have a variety of outbound and options for different travel needs.TSY travel & tour take care of any travel and tour requirement of it's esteemed clients at global level. TSY has been entering into new geographic areas and making effort to make the best possible deal to avialble to its clients. 
+                    </p>
+                </div>
+                <div class="right">
+                    <img src="/img/aboutImage.jpg" alt="">
+
+                </div>
+            </div>
+        </div>
+        <div id="package">
+            <h1>CHOOSE YOUR TRAVELING PACKAGE</h1>
+            <div class="travelbox">
+                <div class="left">
+                    <div class="tabs">
+                        <button id="but1" onclick="func1()">MICE</button>
+                        <button id="but2" onclick="func2()" >LESIURE TRAVELS</button>
+                        <button id="but3" onclick="func3()">Umrah</button>
+                    </div>
+                    <div class="text">
+                        <p id="t1">
+                            From Corporate, Professional and specialist group travel to conferences, meetings, events and leisure planning. TSY offer destination management services worldwide to it's clients.
+                        </p>
+                        
+                        <p id="t2">
+                            Apart from Ticketing, we design tailor made holidays and tour packages for domestic and international tourists.We provide Worldwide Holtel bookings, Tours, Activities, Transfer, Visa processing and Travel insurance include in our services.
+                        </p>
+
+                        <p id="t3">
+                            With our exclusive UMRAH packages, we can extend to you the most seamless services you can imagine.
+                        </p>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i>MICE</li>
+                        <li><i class="fas fa-check"></i>LESIURE TRAVELS</li>
+                        <li><i class="fas fa-check"></i>UMRAH</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <img src="/img/fit.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="service">
+            <h1>OUR SERVICES</h1>
+            <div class="servicebox">
+                <div class="box">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <p>HOTEL BOOKING</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-jet-fighter"></i>
+                    <p>AIR FLIGHTS</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-kaaba"></i>
+                    <p>UMRAH</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-person"></i>
+                    <p>TRAVEL GUIDES</p>
+                </div>
+                <div class="box">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <p>INCENTIVE TOURS</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-car"></i>
+                    <p>CHOISE OF TOURS</p>
+                </div>
+            </div>
+        </div>
+        <div id="gallery">
+            <h1>OUR GALLERY</h1>
+            <div class="imagegallery">
+                <img src="/img/1.jpg" alt="">
+                <img src="/img/2.jpg" alt="">
+                <img src="/img/3.jpeg" alt="">
+                <img src="/img/4.jpg" alt="">
+                <img src="/img/5.jpeg" alt="">
+                <img src="/img/6.jpeg" alt="">
+                <img src="/img/7.jpeg" alt="">
+                <img src="/img/8.jpeg" alt="">
+                <img src="/img/9.jpeg" alt="">
+                <img src="/img/10.jpeg" alt="">
+                <img src="/img/11.jpeg" alt="">
+                <img src="/img/12.jpeg" alt="">
+            </div>
+        </div>
+        <div id="awards">
+            <h1>OUR AWARDS</h1>
+            <div class="awardgallery">
+                <img src="/img/award1.png" alt="">
+                <img src="/img/award2.png" alt="">
+                <img src="img/award3.png" alt="">
+            </div>
+        </div>
+        <div id="message">
+            <h1>OUR CHAIRMAN'S MESSAGE</h1>
+            <div class="messagebox">
+                <div class="left">
+                    <img src="/img/boss.jpeg" alt="">
+                </div>
+                <div class="right">
+                    <p>I welcome you into a glimpse of our organization, which is splashed with colors of youth and freshness. Established in 1975, we vented into the prospect of creating a stress free primarily a GSA into a comprehensive Travel Management Solution Provider.
+                    <br>
+                    <br>
+                    We pride ourselves with the conecpt of a flat orgianization, This skill and talent of our management and employees coupled with our strategy. This gives me confidence that we will further develop new opportunities for the group which is proud of its history, but looks forward to a great future.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="contacts">
+            <h1>TSY Travel & Tours</h1>
+            <div class="foot">
+                <div>
+                    <h2>Head Office</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i>&emsp;1st Floor, Grand Hotel & Tower,<br>
+                            &emsp;&emsp;9-Davis Road, Lahore Pakistan.
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-phone-flip"></i>&emsp; +923 111 555 395</li>
+                        <li><i class="fa-solid fa-phone-flip"></i>&emsp; 0423 6362135-37</li>
+                        <li><i class="fa-regular fa-envelope"></i>&emsp;  info@mytsy.com</li>
+                        <li><i class="fa-solid fa-laptop"></i>&emsp; www.mytsy.com</li>
+                        <li><i class="fa-brands fa-facebook"></i>&emsp; <a href="https://www.facebook.com/tsytravels/">facebook.com/tsytravels</a></li>
+                    </ul>
+                </div>
+                <div class="footnav">
+                    <h2>Navigation</h2>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#awards">Awards</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <img src="/img/foot.png" alt="">
+            <p>
+                © 2019. All Rights Reserved | Powered by
+                <a style="color:red;" href="https:/www.techloution.com" target="blank">Techloution</a>
+            </p>
+        </div>
+    </div>
+
+
+
+    <script>
+        function nav1(){
+            var toggle = document.getElementById("navlist");
+            if (toggle.style.display === 'none') {
+            toggle.style.display = 'block';
+            this.textContent = 'Hide Paragraph';
+        } else {
+            toggle.style.display = 'none';
+            this.textContent = 'Show Paragraph';
+        }
+        }
+        function func1(){
+            document.getElementById("but1").style.backgroundColor='#ffa500';
+            document.getElementById("but2").style.backgroundColor='#5d5d5d';
+            document.getElementById("but3").style.backgroundColor='#5d5d5d';
+
+            document.getElementById("t1").style.display= "block";
+            document.getElementById("t2").style.display= "none";
+            document.getElementById("t3").style.display= "none";
+
+        }
+        function func2(){
+            document.getElementById("but1").style.backgroundColor='#5d5d5d';
+            document.getElementById("but2").style.backgroundColor='#ffa500';
+            document.getElementById("but3").style.backgroundColor='#5d5d5d';
+
+            document.getElementById("t1").style.display= "none";
+            document.getElementById("t2").style.display= "block";
+            document.getElementById("t3").style.display= "none";
+        }
+        function func3(){
+            document.getElementById("but1").style.backgroundColor='#5d5d5d';
+            document.getElementById("but2").style.backgroundColor='#5d5d5d';
+            document.getElementById("but3").style.backgroundColor='#ffa500';
+
+            document.getElementById("t1").style.display= "none";
+            document.getElementById("t2").style.display= "none";
+            document.getElementById("t3").style.display= "block";
+        }
+    </script>
+</body>
+</html>
