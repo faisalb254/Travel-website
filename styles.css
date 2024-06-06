@@ -1,0 +1,473 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+}
+h1{
+    font-size: 40px;
+    font-weight: lighter;
+    color: #ffa500;
+    text-align: center;
+}
+h2{
+    color: #ffa500;
+    font-weight: lighter;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: #ffa500;
+}
+
+
+
+#home{
+    background-color: rgb(232 232 232);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.nav{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.nav img{
+    max-height: 180px;
+    width: auto;
+    margin-left: 9%;
+}
+.nav ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 20px;
+ }
+ .nav ul li a{
+    text-decoration: none;
+    color: #134368;
+    transition-property: all;
+    transition-duration: 500ms;
+ }
+ .nav ul li a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #ffa500;
+    letter-spacing: 5px;
+    cursor: pointer;
+ }
+ .letters{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+.letters h1{
+    display: inline-block;
+    font-size: 40px;
+    color: #134368;
+    animation: travel 4s ease-in-out infinite ;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid black;
+}
+@keyframes travel {
+    0%{
+        width: 0ch;
+    }
+    50%{
+        width: 19ch;
+    }
+    100%{
+        width: 0ch;
+    }
+}
+.letters p{
+    margin: 10px;
+    display: inline-block;
+    font-size: 30px;
+    color: #ffa500;
+    border-bottom: 1px solid;
+    font-style: italic;
+}
+.travelfig img{
+    height: 400px;
+    width: 100%;
+}
+
+.navmobi{
+    display: none;
+    width: 100%;
+}
+.navmobi i{
+    float: left;
+    color: black;
+    font-size: 25px;
+}
+.navmobi button{
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+}
+.navmobi #navlist{
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+#navlist ul{
+ list-style-type: none;   
+ padding: 0px;
+ width: 99vw;
+}
+#navlist li{
+    border: 1px solid;
+    padding: 25px;
+    color: white;
+    background-color: #134368;
+}
+#navlist li a{
+    color: white;
+    text-decoration: none;
+}
+.navmobi .logo{
+    display: flex;
+    justify-content: center;
+}
+.navmobi .logo img{
+    max-height: 180px;
+    width: auto;
+}
+#about{
+    background-color: rgb(232 232 232);
+    height: 700px;
+    color: #ffa500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+#about .box{
+    width: 60%;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 500px 350px;
+}
+.box .left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.box .left div{
+    display: inline-block;
+    font-size: 35px;
+}
+.box .left p{
+    border-top: 1px solid;
+    padding-top: 15px;
+    margin-right: 45px;
+    color: #134368;
+    font-size: 20px;
+    text-align: justify;
+    line-height: 30px;
+}
+.box .right img{
+    width: 100%;
+    height: 75%;
+    margin-left: 32px;
+    margin-top: 50px;
+}
+
+#package{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+#package h1{
+    margin-bottom: 60px;
+}
+#package .travelbox{
+    width: 72%;
+    display: grid;
+    grid-template-columns: 500px 500px;
+}
+#package button{
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.travelbox .tabs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.travelbox text{
+    width: 100%;
+}
+#but1{
+    background-color: #ffa500;
+}
+#but2{
+    background-color: #5d5d5d;
+}
+#but3{
+    background-color: #5d5d5d;
+}
+#t1{
+    width: 100%;
+    display: block;
+    text-align: justify;
+}
+#t2{
+    display: none;
+    text-align: justify;
+}
+#t3{
+    display: none;
+    text-align: justify;
+}
+.travelbox .text{
+    width: 100%;
+    margin-top: 8%;
+    padding-right: 10%;
+    font-size: 18px;
+    color: #134368;
+}
+
+.travelbox ul{
+    padding-left: 15px;
+}
+.travelbox li{
+    color: grey;
+    margin-top: 20px;
+    list-style-type: none;
+}
+.travelbox li i{
+    color: #ffa500;
+}
+#service{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: rgb(232 232 232);
+    color: #ffa500;
+    padding: 40px;
+}
+#service .servicebox{
+    width: 60%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.servicebox .box{
+    height: 200px;
+    width: 250px;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box p{
+    text-align: center;
+    font-size: 25px;
+    color: #134368;
+}
+#gallery{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+#gallery .imagegallery{
+    width: 70%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+#gallery img{
+    border: 1px solid;
+    border-collapse: collapse;
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+    margin: 1%;
+}
+#awards{
+    display: flex;
+    color: #ffa500;
+    background-color: rgb(232 232 232);
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.awardgallery{
+    width: 60%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.awardgallery img{
+    width: 25%;
+    max-height: 400px;
+    height: auto;
+}
+#message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.messagebox{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.messagebox .left{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.messagebox .right{
+    width: 100%;
+}
+.messagebox img{
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+}
+.messagebox p{
+    display: flex;
+    flex-wrap: wrap;
+    color: #134368;
+    line-height: 30px;
+    text-align: justify;
+    font-size: 18px;
+    width: 100%;
+}
+#contacts{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+#contacts .foot{
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.foot div{
+    width: 330px;
+}
+.foot div ul{
+    list-style-type: none;
+    padding: 0px;
+}
+.foot div ul i{
+    margin-right: 2px;
+}
+.foot div ul li{
+    padding-top: 20px;
+}
+#contacts img{
+    margin-top: 40px;
+    width: 450px;
+    height: auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid;
+}
+@media (max-width:1200px) {
+    #about{
+        height: auto;
+    }
+    #about .box{
+        grid-template-columns: 75%;
+        justify-content: center;
+    }
+    .box .right img{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    #package .travelbox{
+        grid-template-columns: 100%;
+    }
+    #package .travelbox .right{
+        display: none;
+    }
+    .nav{
+        display: none;
+    }
+    .navmobi{
+        display: block;
+    }
+    .messagebox{
+        grid-template-columns: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width:1320px) {
+    #package .travelbox .right{
+        display: none;
+    }  
+    .footnav{
+        display: none;
+    }
+}
+@media (max-width:500px) {
+    .letters h1{
+        white-space: wrap;
+        border: none;
+        animation-iteration-count: 0;
+    }
+    .travelfig img{
+        height: 300px;
+    }
+    #about .box{
+        grid-template-columns: 100%;
+        align-items: start;
+    }
+    #contacts img{
+        width: 80%;
+    }
+    #contacts p{
+        text-align: center;
+    }
+    .box .left p{
+        margin-right: 0px;
+    }
+    .awardgallery{
+        width: 100%;
+        flex-direction: column;
+    }
+}
