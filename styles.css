@@ -34,6 +34,7 @@ a:hover{
     justify-content: center;
     flex-direction: column;
     padding-top: 20px;
+    /* height: 90vh; */
 }
 .nav{
     width: 80%;
@@ -44,7 +45,7 @@ a:hover{
     flex-wrap: nowrap;
 }
 .nav img{
-    max-height: 180px;
+    max-height: 200px;
     width: auto;
     margin-left: 9%;
 }
@@ -151,21 +152,22 @@ a:hover{
 }
 #about{
     background-color: rgb(232 232 232);
-    height: 700px;
+    /* height: 700px; */
+    height: 90vh;
     color: #ffa500;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 10px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 #about .box{
     width: 60%;
     padding-top: 20px;
     display: grid;
-    grid-template-columns: 500px 350px;
+    grid-template-columns: 500px 450px;
 }
 .box .left{
     display: flex;
@@ -187,7 +189,7 @@ a:hover{
 }
 .box .right img{
     width: 100%;
-    height: 75%;
+    height: 74%;
     margin-left: 32px;
     margin-top: 50px;
 }
@@ -197,6 +199,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 60px;
     padding-bottom: 60px;
 }
 #package h1{
@@ -266,6 +269,7 @@ a:hover{
     color: #ffa500;
 }
 #service{
+    /* height: 90vh; */
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -407,9 +411,9 @@ a:hover{
     border-bottom: 1px solid;
 }
 @media (max-width:1200px) {
-    #about{
-        height: auto;
-    }
+    /* #about{
+        height: 90vh;
+    } */
     #about .box{
         grid-template-columns: 75%;
         justify-content: center;
@@ -445,6 +449,12 @@ a:hover{
     }
 }
 @media (max-width:500px) {
+    #about{
+        height: auto;
+    }
+    #service{
+        height: auto;
+    }
     .letters h1{
         white-space: wrap;
         border: none;
